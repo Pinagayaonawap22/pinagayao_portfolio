@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url("https://i.imghippo.com/files/aE2976NmU.jpg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            border-radius: 5px;
+            width: 80%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 40px;
+            margin: 0;
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+        }
+        .buttons {
+            font-weight: bold;
+            font-size: large;
+            background-color: transparent;
+            border: 2px solid white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .buttons:hover {
+            background-color: #f0f0f0;
+            color: black;
+            transform: scale(1.05);
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-grow: 1;
+            padding: 20px;
+            text-align: center;
+        }
+        .text-content h2 {
+            margin: 0;
+        }
+        .profile {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+        .contact-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: transparent;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            color: transparent;
+        }
+        #notification {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <div class="button-group">
+            <button class="buttons">About</button>
+            <button class="buttons">Projects</button>
+            <button class="buttons">Resume</button>
+        </div>
+    </header>
+    <main>
+        <div style="display: flex; align-items: center; gap: 50px; margin-top: 50px;">
+            <section class="text-content">
+                <h2 style="font-size: 40px;">I'm</h2>
+                <h2 style="font-size: 80px;">Nawap Pinagayao</h2>
+                <h2 style="font-size: 35px;">Computer Engineering Student</h2>
+            </section>
+            <img class="profile" src="https://i.imghippo.com/files/qxfU3761AVo.jpg" alt="Profile Picture">
+        </div>  
+        <div>
+            <div id="notification"> email me: pinagayaonawap22@gmail.com</div>
+            <h2>Contact me:</h2>
+            <div class="contact-buttons">
+                <a href="https://www.facebook.com/nawap.pinagayao" target="_blank" class="contact-button">
+                    <img src="https://i.imghippo.com/files/cMcy9838RwQ.png" alt="Facebook Logo" class="logo">
+                </a>
+                <button onclick="showNotification()" style="background-color: transparent; border-color:transparent;">
+                    <img src="https://i.imghippo.com/files/aU9782AiQ.png" class="logo">
+                </button>
+                <a href="https://www.linkedin.com/in/nawap-pinagayao-513268345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="contact-button">
+                    <img src="https://i.imghippo.com/files/Znoh5393SNc.png" alt="Facebook Logo" class="logo">
+                </a>
+        </div>
+    </main>
+    <script>
+        function showNotification() {
+            var notification = document.getElementById('notification');
+            notification.style.display = 'block';
+
+            // Hide the notification after 3 seconds
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 10000);
+        }       
+    </script>
+</body>
+</html>
