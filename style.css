@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url("https://i.imghippo.com/files/aE2976NmU.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    border-radius: 5px;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+header h1 {
+    font-size: 40px;
+    margin: 0;
+}
+.button-group {
+    display: flex;
+    gap: 15px;
+}
+.buttons {
+    font-weight: bold;
+    font-size: large;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.buttons:hover {
+    background-color: #f0f0f0;
+    color: black;
+    transform: scale(1.05);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-grow: 1;
+    padding: 20px;
+    text-align: center;
+}
+.text-content h2 {
+    margin: 0;
+}
+.profile {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 5px solid white;
+}
+.contact-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.contact-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    color: transparent;
+}
+#notification {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.web1{
+    display: flex; 
+    align-items: center; 
+    gap: 50px; 
+    margin-top: 50px;
+}
