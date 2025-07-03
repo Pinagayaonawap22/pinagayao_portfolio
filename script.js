@@ -25,6 +25,16 @@
             }
         });
 
+        function showAbout() {
+            document.getElementById('aboutSection').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAbout() {
+            document.getElementById('aboutSection').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
         // Projects section functions
         function showProjects() {
             document.getElementById('projectsSection').classList.add('active');
@@ -82,6 +92,8 @@
                 // Handle navigation
                 if (index === 1) { // Projects button (index 1)
                     showProjects();
+                } else if (index === 0) {
+                    showAbout()
                 }
             });
         });
