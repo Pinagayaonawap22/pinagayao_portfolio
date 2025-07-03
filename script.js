@@ -1,99 +1,68 @@
 
-        // Create animated particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-                particlesContainer.appendChild(particle);
-            }
-        }
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Projects section functions
-        function showProjects() {
-            document.getElementById('projectsSection').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeProjects() {
-            document.getElementById('projectsSection').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function showAddProjectInfo() {
-            alert('To add a new project:\n\n1. Replace the placeholder image URL\n2. Update the project title\n3. Write your project description\n4. Add your technology tags\n5. Update the demo and GitHub links\n\nYou can duplicate the project-card div and customize it with your project details!');
-        }
-
-        // Email notification
-        function showEmailNotification() {
-            const notification = document.getElementById('emailNotification');
-            notification.classList.add('show');
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 5000);
-        }
-
-        // Smooth scroll to contact
-        function scrollToContact() {
-            document.getElementById('contact').scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-
-        // Initialize particles on load
-        window.addEventListener('load', createParticles);
-
-        // Add navigation functionality
-        document.querySelectorAll('.nav-btn').forEach((btn, index) => {
-            btn.addEventListener('click', function() {
-                // Add ripple effect
-                const ripple = document.createElement('span');
-                ripple.style.position = 'absolute';
-                ripple.style.borderRadius = '50%';
-                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
-                ripple.style.transform = 'scale(0)';
-                ripple.style.animation = 'ripple 0.6s linear';
-                ripple.style.left = '50%';
-                ripple.style.top = '50%';
-                
-                this.style.position = 'relative';
-                this.appendChild(ripple);
+        function showNotification() {
+            // Copy email to clipboard
+            navigator.clipboard.writeText('pinagayaonawap22@gmail.com').then(() => {
+                const notification = document.getElementById('notification');
+                notification.classList.add('show');
                 
                 setTimeout(() => {
-                    ripple.remove();
-                }, 600);
+                    notification.classList.remove('show');
+                }, 3000);
+            }).catch(() => {
+                // Fallback if clipboard API fails
+                const notification = document.getElementById('notification');
+                notification.textContent = '📧 Email: pinagayaonawap22@gmail.com';
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 5000);
+            });
+        }
 
-                // Handle navigation
-                if (index === 1) { // Projects button (index 1)
-                    showProjects();
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
 
-        // Add ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(12, 16, 37, 0.98)';
+            } else {
+                header.style.background = 'rgba(12, 16, 37, 0.95)';
             }
-        `;
-        document.head.appendChild(style);
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe skill items for stagger animation
+        document.querySelectorAll('.skill-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(item);
+        });

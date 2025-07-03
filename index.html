@@ -9,228 +9,107 @@
 </head>
 
 <body>
-    <!-- Animated background particles -->
-    <div class="particles" id="particles"></div>
-
-    <header id="header">
-        <div class="logo">Nawap Pinagayao</div>
-        <div class="nav-buttons">
-            <button class="nav-btn">About</button>
-            <button class="nav-btn">Projects</button>
-            <button class="nav-btn">Resume</button>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">NP</div>
+            </div>
         </div>
     </header>
 
     <main>
-        <div class="hero-section">
-            <div class="hero-text">
-                <h1>Hi, I'm</h1>
-                <h2>Nawap</h2>
-                <h3>Computer Engineering Student</h3>
-                <button class="cta-button" onclick="scrollToContact()">Let's Connect</button>
-            </div>
-            <div class="hero-image">
-                <div class="profile-container">
-                    <img class="profile-img" src="https://i.imghippo.com/files/qxfU3761AVo.jpg" alt="Nawap Pinagayao">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Hi, I'm <span class="highlight">Nawap Pinagayao</span></h1>
+                        <p class="subtitle">Computer Engineering Student</p>
+                        <p class="description">
+                            Passionate about creating innovative solutions through code. 
+                            Currently pursuing Computer Engineering with a focus on software development, 
+                            embedded systems, and emerging technologies.
+                        </p>
+                        <a href="#contact" class="cta-button">Get In Touch</a>
+                    </div>
+                    <div class="hero-image">
+                        <div class="profile-container">
+                            <img src="https://i.imghippo.com/files/qxfU3761AVo.jpg" alt="Nawap Pinagayao" class="profile-pic">
+                        </div>
+                        <div class="floating-elements">
+                            <div class="floating-element"></div>
+                            <div class="floating-element"></div>
+                            <div class="floating-element"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="contact-section" id="contact">
-            <h2>Let's Connect</h2>
-            <div class="contact-buttons">
-                <a href="https://www.facebook.com/nawap.pinagayao" target="_blank" class="contact-btn">
-                    <img src="https://i.imghippo.com/files/cMcy9838RwQ.png" alt="Facebook">
-                </a>
-                <button class="contact-btn" onclick="showEmailNotification()">
-                    <img src="https://i.imghippo.com/files/aU9782AiQ.png" alt="Email">
-                </button>
-                <a href="https://www.linkedin.com/in/nawap-pinagayao-513268345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="contact-btn">
-                    <img src="https://i.imghippo.com/files/Znoh5393SNc.png" alt="LinkedIn">
-                </a>
+            <div class="scroll-indicator">
+                <div style="font-size: 24px;">↓</div>
+                <div style="font-size: 12px; margin-top: 5px;">Scroll to explore</div>
             </div>
-        </div>
+        </section>
+
+        <section class="skills">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-icon">⚡</span>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icon">🐍</span>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icon">⚛️</span>
+                        <h3>React</h3>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icon">🎨</span>
+                        <h3>Web Design</h3>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icon">🔧</span>
+                        <h3>Hardware</h3>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icon">📱</span>
+                        <h3>Mobile Dev</h3>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icon">🗄️</span>
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icon">☁️</span>
+                        <h3>Cloud</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2>Let's Connect</h2>
+                <p class="email">Ready to collaborate on exciting projects</p>
+                <button onclick="showNotification()" style="background: none; border: none; color: inherit; cursor: pointer;">
+                    <div class="cta-button" style="display: inline-block;">📧 Copy Email</div>
+                </button>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/nawap.pinagayao" target="_blank" class="social-link">
+                        <img src="https://i.imghippo.com/files/cMcy9838RwQ.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.linkedin.com/in/nawap-pinagayao-513268345" target="_blank" class="social-link">
+                        <img src="https://i.imghippo.com/files/Znoh5393SNc.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Projects Section -->
-    <div class="projects-section" id="projectsSection">
-        <button class="close-projects" onclick="closeProjects()">&times;</button>
-        
-        <div class="projects-header">
-            <h1>My Projects</h1>
-            <p>Here are some of the projects I've worked on. Each project represents a learning experience and showcases different aspects of my skills.</p>
-        </div>
-
-        <div class="projects-grid">
-            <!-- Sample Project 1 -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/400x200/4ecdc4/ffffff?text=Project+1" alt="Project 1" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">E-Commerce Website</h3>
-                    <p class="project-description">A full-stack e-commerce platform with user authentication, product catalog, shopping cart, and payment integration. Built with modern web technologies.</p>
-                    <div class="project-technologies">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link secondary">GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sample Project 2 -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/400x200/ff6b6b/ffffff?text=Project+2" alt="Project 2" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Mobile Weather App</h3>
-                    <p class="project-description">A responsive weather application that provides real-time weather data, forecasts, and location-based services with a clean, intuitive interface.</p>
-                    <div class="project-technologies">
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">API Integration</span>
-                        <span class="tech-tag">Geolocation</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link secondary">GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sample Project 3 -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/400x200/45b7d1/ffffff?text=Project+3" alt="Project 3" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Task Management System</h3>
-                    <p class="project-description">A collaborative task management application with real-time updates, team collaboration features, and project tracking capabilities.</p>
-                    <div class="project-technologies">
-                        <span class="tech-tag">Vue.js</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Socket.io</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link secondary">GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add Project Card -->
-            <div class="add-project-card" onclick="showAddProjectInfo()">
-                <div class="plus-icon">+</div>
-                <p>Add New Project</p>
-            </div>
-        </div>
+    <div id="notification" class="notification">
+        📧 Email copied: pinagayaonawap22@gmail.com
     </div>
-
-    <!-- Email notification -->
-    <div class="email-notification" id="emailNotification">
-        <h4>📧 Email Me</h4>
-        <p>pinagayaonawap22@gmail.com</p>
-    </div>
-
-    <script>
-        // Create animated particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-                particlesContainer.appendChild(particle);
-            }
-        }
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Projects section functions
-        function showProjects() {
-            document.getElementById('projectsSection').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeProjects() {
-            document.getElementById('projectsSection').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function showAddProjectInfo() {
-            alert('To add a new project:\n\n1. Replace the placeholder image URL\n2. Update the project title\n3. Write your project description\n4. Add your technology tags\n5. Update the demo and GitHub links\n\nYou can duplicate the project-card div and customize it with your project details!');
-        }
-
-        // Email notification
-        function showEmailNotification() {
-            const notification = document.getElementById('emailNotification');
-            notification.classList.add('show');
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 5000);
-        }
-
-        // Smooth scroll to contact
-        function scrollToContact() {
-            document.getElementById('contact').scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-
-        // Initialize particles on load
-        window.addEventListener('load', createParticles);
-
-        // Add navigation functionality
-        document.querySelectorAll('.nav-btn').forEach((btn, index) => {
-            btn.addEventListener('click', function() {
-                // Add ripple effect
-                const ripple = document.createElement('span');
-                ripple.style.position = 'absolute';
-                ripple.style.borderRadius = '50%';
-                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
-                ripple.style.transform = 'scale(0)';
-                ripple.style.animation = 'ripple 0.6s linear';
-                ripple.style.left = '50%';
-                ripple.style.top = '50%';
-                
-                this.style.position = 'relative';
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-
-                // Handle navigation
-                if (index === 1) { // Projects button (index 1)
-                    showProjects();
-                }
-            });
-        });
-
-        // Add ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
 </body>
-
 </html>
