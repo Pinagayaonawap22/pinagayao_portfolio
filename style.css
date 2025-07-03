@@ -321,8 +321,8 @@
         }
 
         .social-link img {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
 
         }
 
@@ -348,8 +348,6 @@
             transform: translateY(-3px);
             box-shadow: 0 15px 35px rgba(100, 255, 218, 0.4);
         }
-
-        /* Notification */
         .notification {
             position: fixed;
             top: 100px;
