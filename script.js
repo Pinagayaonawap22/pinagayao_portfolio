@@ -25,15 +25,7 @@
             }
         });
 
-        function showAbout() {
-            document.getElementById('aboutSection').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeAbout() {
-            document.getElementById('aboutSection').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
+        
 
         // Projects section functions
         function showProjects() {
