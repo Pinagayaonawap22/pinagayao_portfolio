@@ -66,3 +66,12 @@
             item.style.transition = `all 0.6s ease ${index * 0.1}s`;
             observer.observe(item);
         });
+
+        function showProject(tabId) {
+        const tabs = document.querySelectorAll('.project-tab');
+        tabs.forEach(tab => tab.style.display = 'none');
+
+        const selected = document.getElementById(tabId);
+        if (selected) selected.style.display = 'block';
+        }
+
