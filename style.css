@@ -307,8 +307,6 @@
             justify-content: center;
             width: 60px;
             height: 60px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -323,10 +321,9 @@
         }
 
         .social-link img {
-            width: 30px;
-            height: 30px;
-            filter: brightness(0) invert(1);
-            opacity: 0.8;
+            width: 50px;
+            height: 50px;
+
         }
 
         .social-link:hover img {
