@@ -25,23 +25,6 @@
             }
         });
 
-        
-
-        // Projects section functions
-        function showProjects() {
-            document.getElementById('projectsSection').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeProjects() {
-            document.getElementById('projectsSection').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function showAddProjectInfo() {
-            alert('To add a new project:\n\n1. Replace the placeholder image URL\n2. Update the project title\n3. Write your project description\n4. Add your technology tags\n5. Update the demo and GitHub links\n\nYou can duplicate the project-card div and customize it with your project details!');
-        }
-
         // Email notification
         function showEmailNotification() {
             const notification = document.getElementById('emailNotification');
@@ -61,10 +44,10 @@
         // Initialize particles on load
         window.addEventListener('load', createParticles);
 
-        // Add navigation functionality
-        document.querySelectorAll('.nav-btn').forEach((btn, index) => {
+        // Add some interactive effects
+        document.querySelectorAll('.nav-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                // Add ripple effect
+                // Add a ripple effect
                 const ripple = document.createElement('span');
                 ripple.style.position = 'absolute';
                 ripple.style.borderRadius = '50%';
@@ -80,11 +63,6 @@
                 setTimeout(() => {
                     ripple.remove();
                 }, 600);
-
-                // Handle navigation
-                if (index === 1) { // Projects button (index 1)
-                    showProjects();
-                }
             });
         });
 
