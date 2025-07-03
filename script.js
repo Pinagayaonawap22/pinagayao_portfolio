@@ -59,7 +59,6 @@
             });
         }, observerOptions);
 
-        // Observe skill items for stagger animation
         document.querySelectorAll('.skill-item').forEach((item, index) => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(30px)';
