@@ -92,8 +92,6 @@
                 // Handle navigation
                 if (index === 1) { // Projects button (index 1)
                     showProjects();
-                } else if (index === 0) {
-                    showAbout();
                 }
             });
         });
